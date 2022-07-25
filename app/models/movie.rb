@@ -1,5 +1,6 @@
 class Movie < ApplicationRecord
-  belongs_to :user
+  #belongs_to :user
+  has_one_attached :image
 
   enum category: [:Drama, :Romance, :Action, :Comedy, :Fantasy, :Adventure]
 
