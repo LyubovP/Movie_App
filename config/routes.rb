@@ -1,10 +1,11 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do  
   devise_for :users
-  resources :movies
-  
+  resources :movies do
+    resources :reviews, expect: [:show, :index]
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root to: "home#index"
+  root to: "movies#index"
 end
