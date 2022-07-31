@@ -1,25 +1,9 @@
 <div id="<%= dom_id movie %>">
-  <p>
-    <%= link_to image_tag(movie.image), movie.image%>
-  </p>
-  <p>
-    <strong>Title:</strong>
-    <%= movie.title %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= movie.description %>
-  </p>
-
-  <p>
-    <strong>Category:</strong>
-    <%= movie.category %>
-  </p>
-
-  <p>
-    <strong>Rating:</strong>
-    <%= movie.rating %>
-  </p>
-
+    <div class="row">
+      <div class="row g-2">
+        <div class="col-6 img">
+          <%= link_to image_tag(movie.image), movie_path(movie.id)%>
+        </div>
+      </div>
+    </div>  
 </div>

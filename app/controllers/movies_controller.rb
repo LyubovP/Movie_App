@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_movie, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /movies or /movies.json
   def index
@@ -9,11 +9,12 @@ class MoviesController < ApplicationController
 
   # GET /movies/1 or /movies/1.json
   def show
+    @reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
   end
 
   # GET /movies/new
   def new
-    @movie = Movie.new
+    @movie = current_user.movies.build
   end
 
   # GET /movies/1/edit
@@ -22,8 +23,7 @@ class MoviesController < ApplicationController
 
   # POST /movies or /movies.json
   def create
-    @movie = Movie.new(movie_params)
-
+    @movie = current_user.movies.build(movie_params)
     respond_to do |format|
       if @movie.save
         format.html { redirect_to movie_url(@movie), notice: "Movie was successfully created." }

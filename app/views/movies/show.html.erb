@@ -1,6 +1,55 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @movie %>
+   <div class="row">
+      <div class="col-md-4">
+        <div class="text-center">
+          <%= link_to image_tag(@movie.image)%>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-sm text-light">
+            <tbody>
+              <tr>
+                <td><strong>Title:</strong></td>
+                <td><%= @movie.title %></td>
+              </tr>
+              <tr>
+                <td><strong>Description:</strong></td>
+                <td><%= @movie.description %></td>
+              </tr>
+              <tr>
+                <td><strong>Category:</strong></td>
+                <td><%= @movie.category %></td>
+              </tr>
+              <tr>
+                <td><strong>Rating:</strong></td>
+                <td><%= @movie.rating %></td>
+              </tr>
+            </tbody>
+          </table>
+          <%= link_to "Write a Review", new_movie_review_path(@movie) %>
+        </div>
+      </div>
+      <div class="col-md-7 col-md-offset-1 card text-white bg-dark mb-3">
+        <h1 class="card-header text-center">
+          <%= @movie.title%>          
+        </h1>
+        <p>
+          <%= @movie.description%>
+        </p>
+        <hr>
+        <% if @reviews.blank?%>
+          <h3> No reviews just yet, would you like to add the first!</h3>
+          <%= link_to "Write a Review", new_movie_review_path(@movie), class: "btn btn-danger"%>
+        <% else %>
+          <% @reviews.each do |review| %>
+            <div class="card-text card text-white bg-secondary mb-3">
+              <p><%= review.rating %></p>
+              <p><%= review.comment %></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>  
 
 <div>
   <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
