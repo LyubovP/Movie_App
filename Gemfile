@@ -55,6 +55,7 @@ gem 'image_processing', '~> 1.12', '>= 1.12.2'
 gem "aws-sdk-s3", require: false
 gem 'activeadmin'
 gem 'sassc-rails'
+gem 'cancancan', '~> 3.4'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
