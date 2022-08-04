@@ -8,5 +8,6 @@
   <br/>
   <% end %>
 </div>
-
-<%= link_to "New movie", new_movie_path, class: 'btn btn-primary' %>
+<% if can? :create, @movies %>
+  <%= link_to "New movie", new_movie_path, class: 'btn btn-primary' %>
+<% end %>

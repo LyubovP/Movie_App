@@ -52,8 +52,11 @@
     </div>  
 
 <div>
+<% if can? :update, @movies %>
   <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
+<%end%>
   <%= link_to "Back to movies", movies_path %>
-
+<% if can? :destroy, @movies %>
   <%= button_to "Destroy this movie", @movie, method: :delete %>
+<%end%>
 </div>

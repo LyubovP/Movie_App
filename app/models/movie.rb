@@ -2,7 +2,6 @@ class Movie < ApplicationRecord
   belongs_to :user
   has_one_attached :image
   has_many :reviews
-  belongs_to :admin_user
 
   enum category: [:Drama, :Romance, :Action, :Comedy, :Fantasy, :Adventure]
 

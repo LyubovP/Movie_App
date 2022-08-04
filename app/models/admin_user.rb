@@ -4,4 +4,8 @@ class AdminUser < ApplicationRecord
   devise :database_authenticatable, 
          :recoverable, :rememberable, :validatable
   has_many :movies
+
+  def admin?
+    true
+  end
 end
