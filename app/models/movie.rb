@@ -8,4 +8,7 @@ class Movie < ApplicationRecord
   validates :title, presence: true, length: { in: 3..128 }
   validates :description, presence: true, length: { in: 5..300 }
   validates :category, inclusion: { in: Movie::categories }
+
+  scope :published, -> { where.not(published_at: nil) }
+  scope :unpublished, -> { where(published_at: nil) }
 end

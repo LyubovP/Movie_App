@@ -1,5 +1,6 @@
 Rails.application.routes.draw do  
-  devise_for :admin_users, ActiveAdmin::Devise.config  
+  devise_for :admin_users, ActiveAdmin::Devise.config 
+  ActiveAdmin.routes(self) 
   devise_for :users
   resources :movies do
     resources :reviews, expect: [:show, :index]
@@ -9,5 +10,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root to: "movies#index"
-  ActiveAdmin.routes(self)
+  
 end

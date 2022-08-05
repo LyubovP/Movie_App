@@ -53,7 +53,7 @@ gem "bootsnap", require: false
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'image_processing', '~> 1.12', '>= 1.12.2'
 gem "aws-sdk-s3", require: false
-gem 'activeadmin'
+gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin.git'
 gem 'sassc-rails'
 gem 'cancancan', '~> 3.4'
 

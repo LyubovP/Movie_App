@@ -1,9 +1,8 @@
-<div id="<%= dom_id movie %>">
+
     <div class="row">
       <div class="row g-2">
-        <div class="col-6 img">
-          <%= link_to image_tag(movie.image), movie_path(movie.id)%>
+        <div class="col-6 card-img">
+          <%= link_to image_tag(movie.image, size: "200x300"), movie_path(movie.id)%>
         </div>
       </div>
     </div>  
-</div>
