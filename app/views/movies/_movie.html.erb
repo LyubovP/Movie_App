@@ -1,8 +1,5 @@
-
-    <div class="row">
-      <div class="row g-2">
-        <div class="col-6 card-img">
-          <%= link_to image_tag(movie.image, size: "200x300"), movie_path(movie.id)%>
-        </div>
-      </div>
-    </div>  
+<div class="col">
+  <div class="p-3">
+    <%= link_to image_tag(movie.image, size: "200x300"), movie_path(movie.id)%>
+  </div>
+</div>  
