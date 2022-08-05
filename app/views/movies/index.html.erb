@@ -1,12 +1,11 @@
 <p style="color: green"><%= notice %></p>
-
-<h1>Movies</h1>
-
-<div id="movies">
+<h1 class="text-center">Movies</h1>
+<div class="row gx-5">
   <% @movies.each do |movie| %>
     <%= render movie %>
   <br/>
   <% end %>
 </div>
-
-<%= link_to "New movie", new_movie_path, class: 'btn btn-primary' %>
+<% if can? :create, @movies %>
+  <%= link_to "New movie", new_movie_path, class: 'btn btn-primary' %>
+<% end %>

@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: [:index, :show]
+  load_and_authorize_resource
+  before_action :set_movie, only: %i[ show edit update destroy ]  
 
   # GET /movies or /movies.json
   def index
@@ -24,6 +24,7 @@ class MoviesController < ApplicationController
   # POST /movies or /movies.json
   def create
     @movie = current_user.movies.build(movie_params)
+    @movie.user_id = current_user.id
     respond_to do |format|
       if @movie.save
         format.html { redirect_to movie_url(@movie), notice: "Movie was successfully created." }
