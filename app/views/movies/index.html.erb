@@ -9,3 +9,9 @@
 <% if can? :create, @movies %>
   <%= link_to "New movie", new_movie_path, class: 'btn btn-primary' %>
 <% end %>
+<div>
+<%= link_to_if @page > 0,"<< Previous", movies_path(page: @page -1), class: 'btn' %>
+|
+<%= link_to "Next >>", movies_path(page: @page +1), class: 'btn' %>
+
+</div>
