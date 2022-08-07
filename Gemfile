@@ -54,8 +54,9 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'image_processing', '~> 1.12', '>= 1.12.2'
 gem "aws-sdk-s3", require: false
 gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin.git'
-gem 'sassc-rails'
+gem 'sass-rails'
 gem 'cancancan', '~> 3.4'
+gem 'friendly_id', '~> 5.4.0'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

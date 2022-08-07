@@ -1,4 +1,5 @@
 class Movie < ApplicationRecord
+  extend FriendlyId
   belongs_to :user
   has_one_attached :image
   has_many :reviews
@@ -11,4 +12,10 @@ class Movie < ApplicationRecord
 
   scope :published, -> { where.not(published_at: nil) }
   scope :unpublished, -> { where(published_at: nil) }
+
+  friendly_id :title, use: %i[slugged history]
+
+  def should_generate_new_friendly_id?
+    title_changed? || slug.blank?
+  end
 end
