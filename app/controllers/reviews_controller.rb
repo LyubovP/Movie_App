@@ -64,7 +64,7 @@ class ReviewsController < ApplicationController
     end
 
     def set_movie
-      @movie = Movie.find(params[:movie_id])
+      @movie = Movie.friendly.find(params[:movie_id])
     end
 
     # Only allow a list of trusted parameters through.

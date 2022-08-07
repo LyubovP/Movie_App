@@ -53,7 +53,7 @@ class MoviesController < ApplicationController
 
   # DELETE /movies/1 or /movies/1.json
   def destroy
-    @movie.destroy
+    @movie.friendly.destroy
 
     respond_to do |format|
       format.html { redirect_to movies_url, notice: "Movie was successfully destroyed." }
@@ -64,7 +64,13 @@ class MoviesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_movie
-      @movie = Movie.find(params[:id])
+      @movie = Movie.friendly.find(params[:id])
+      # If an old id or a numeric id was used to find the record, then
+      # the request slug will not match the current slug, and we should do
+      # a 301 redirect to the new path
+      if params[:id] != @movie.slug
+        return redirect_to @movie, :status => :moved_permanently
+      end
     end
 
     # Only allow a list of trusted parameters through.
