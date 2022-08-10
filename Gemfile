@@ -16,7 +16,6 @@ gem "pg"
 gem "puma", "~> 5.0"
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
-gem "jsbundling-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
@@ -57,6 +56,7 @@ gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin.git'
 gem 'sass-rails'
 gem 'cancancan', '~> 3.4'
 gem 'friendly_id', '~> 5.4.0'
+gem 'turbolinks', '~> 5'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
