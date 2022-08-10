@@ -4,6 +4,7 @@
       <div class="col-md-4">
         <div class="text-center">
           <%= link_to image_tag(@movie.image,size: "200x300")%>
+          <div class="star-rating" data-score= <%= @avg_review %> ></div>
         </div>
         <div class="table-responsive">
           <table class="table table-sm text-light">
@@ -43,8 +44,10 @@
         <% else %>
           <% @reviews.each do |review| %>
             <div class="card-text card text-white bg-secondary mb-3">
-              <p><%= review.rating %></p>
-              <p><%= review.comment %></p>
+              <div class="reviews">
+                <div class="star-rating" data-score=<%= review.rating %> ></div>
+                <p><%= review.comment %></p>
+              </div>
             </div>
           <% end %>
         <% end %>
