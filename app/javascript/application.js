@@ -18,3 +18,4 @@ $('#add-rating').raty({
     path: '/assets/',
     scoreName: 'review[rating]'
   });
+  
