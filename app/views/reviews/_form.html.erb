@@ -1,26 +1,29 @@
+<% if user_signed_in? %>
 <%= form_for([@movie, @review]) do |form| %>
-  <% if review.errors.any? %>
+  <% if @review.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
 
       <ul>
-        <% review.errors.each do |error| %>
+        <% @review.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
- <div class="field">
-    <div id="add-rating"  data-number= "10"><%= review.rating %></div>
+  <div class="field">
+    <div id="add-rating"><%= @review.rating %></div>
   </div>
-
-  <div>
+  <br/>
+  <div class="card-text card bg-primary mb-3">
     <%= form.label :comment, style: "display: block" %>
-    <%= form.text_area :comment %>
+    <%= form.text_area :comment, class: "form-control"%>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit :Submit, class: "btn btn-primary"%>
   </div>
 <% end %>
+<hr>
+<%end%>

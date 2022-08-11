@@ -57,6 +57,7 @@ gem 'sass-rails'
 gem 'cancancan', '~> 3.4'
 gem 'friendly_id', '~> 5.4.0'
 gem 'turbolinks', '~> 5'
+gem 'esbuild-rails', '~> 0.1.4'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

@@ -132,6 +132,8 @@ GEM
       warden (~> 1.2.3)
     digest (3.1.0)
     erubi (1.10.0)
+    esbuild-rails (0.1.4)
+      rails (>= 6.0.0)
     ffi (1.15.5)
     formtastic (4.0.0)
       actionpack (>= 5.2.0)
@@ -324,6 +326,7 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise (~> 4.8, >= 4.8.1)
+  esbuild-rails (~> 0.1.4)
   friendly_id (~> 5.4.0)
   image_processing (~> 1.12, >= 1.12.2)
   jbuilder
