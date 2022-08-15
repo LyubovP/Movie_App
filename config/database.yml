@@ -84,3 +84,11 @@ test:
 production:
   <<: *default
   database: movie_app_DB
+
+  adapter: postgresql
+  encoding: unicode  
+  username: lyubov
+  password: 
+  pool: 5
+  timeout: 5000
+  database: movie_app_DB_production
