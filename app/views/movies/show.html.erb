@@ -33,13 +33,8 @@
           <%= @movie.description%>
         </p>
         <hr>
-        <% if @reviews.empty?%>
-        <%=render 'reviews/form' %>
-        <% else %>
-        <% if @reviews.blank?%>
-          <h3> No reviews just yet, would you like to add the first!</h3>
-          <%= link_to "Write a Review", new_movie_review_path(@movie), class: "btn btn-danger"%>         
-        <% else %>
+        <% if @reviews.present?%>
+          <%=render 'reviews/form' %>
           <% @reviews.each do |review| %>
             <div class="card-text card text-white bg-secondary mb-3">
               <div class="reviews">
@@ -48,7 +43,11 @@
               </div>
             </div>
           <% end %>
-        <% end %>
+        <% else %>
+          <% if @reviews.blank?%>
+            <h3> No reviews just yet, would you like to add the first!</h3>
+            <%= link_to "Write a Review", new_movie_review_path(@movie), class: "btn btn-danger"%>   
+          <% end %>
         <% end %>
       </div>
     </div>  
