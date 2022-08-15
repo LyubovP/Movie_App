@@ -322,10 +322,10 @@ minimatch@^3.1.1:
   dependencies:
     brace-expansion "^1.1.7"
 
-node-linux-x64@^14.19.0:
-  version "14.20.0"
-  resolved "https://registry.yarnpkg.com/node-linux-x64/-/node-linux-x64-14.20.0.tgz#3e1d8328c3f699af98a8fbb87af212ea667ca00f"
-  integrity sha512-HYUiHn79MwpUY7D0ZJHVov/ZMS8s/SVP6FHJVAQRKq2KaZ7Woob+NKm+9WB++2GcL2bopV7AFUwk+GUU1D2ytw==
+node-linux-x64@14.19.0:
+  version "14.19.0"
+  resolved "https://registry.yarnpkg.com/node-linux-x64/-/node-linux-x64-14.19.0.tgz#39aa6af34c1f92f0ee36fbc76f95eddb3163a962"
+  integrity sha512-/qeLHMTuIPQXtbK4TmwgBwcACn3vt8x94Usk/kTsegmWPZdlgFv+VvuklC7V6hca6ChUUUL2JFfjTFCqfgunCQ==
 
 normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
